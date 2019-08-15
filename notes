@@ -1,0 +1,204 @@
+#basic pytho notes
+
+#=============== VARIABLES ======================
+# x is represantative of the variable
+x = 1             
+y = 2         
+#same as 
+x, y = 1, 2
+
+NOTE! Naming a variable with uppercase tells other programmers that this is a constant and shouldn't be altered
+example: PI = 3.14
+
+#Return type of the variable
+type(x)
+
+#Convert to that type of data
+int(x)
+float(x)
+str(x)
+bool(x)
+
+#pre-defining the data type threw anotations
+x: int = 10 
+
+#return memory location
+id(x)
+
+#setting a local variable global (bad practice)
+x = 1
+def abc():
+global x
+
+#= STRINGS =====================================
+#length of the string
+len(x)
+
+#position in the string
+x[>=0]      #counting from the beginning of the string
+x[<0]       #counting from the end of the string
+x[y:z]      #all from position y to position z excluding z
+
+#escape character
+x="Hello, \n Word!" #before the
+
+#multiple line string
+x=""" Evrything that is written here
+  will be printed exactly how it is written!"""
+
+#concatenations
+y = "Hello"
+z = "World!"
+x = y + " " + z
+
+#Formated string (same result as the above). 
+# - W/ formated string you can put any expressions betwenn curly bracers
+x = f"{y} {z}"
+
+#string manipulation
+x.upper()               #turns the string into uppercase
+x.lower()               #turns the string into lowercase
+x.title()               #turns the string into uppercase on the first letter of evry Word
+x.strip()               #gets rid of whitespaces (start spaces)
+x.rstrip()              #gets rid of whitespaces (end spaces)
+x.find("yz")            #finds the index of the first ocurrence of the expression inputed (case sensitive)
+x.replace("y", "z")     #replaces all ocurrences (y) with the string (z)
+"y" in x                #returns True if the string "y" exists in the string x
+"y" not in x            #returns False if the string "y" exists in the string x
+
+#= NUMBERS ================================
+#binary
+x = 10       #10
+y = 0b10     #2 in decimal | 0b anounces that the folowing value is in binary
+print(y)     #would print 2
+
+#binary representation
+bin(x)
+
+#hexadecimal
+x = 0x12c   #0x anounces its hexadecimal in this case 0x 12c is 300 in decimal
+
+#= Imaginary numbers
+x = 1 + 2j
+
+#round numbers to integers
+round(x)
+
+#absolute
+abs(x)
+
+NOTE! In case one wants to use math module search "pythin 3 (always version) math" and you will find all the built in fucntions
+
+
+#= OPERATORS ===============================
+x = 1 + 1   #add
+x = 1 - 1   #subtract
+x = 1 * 1   #multiply
+x = 1 / 1   #divide
+x = 1 // 1  #divide that returns a integer
+x = 1 % 1   #remainder of the division
+x = 10 ** 3 #exponent
+
+#Augmented assigment OPERATORS (works with all the operators above)
+x = x + 1
+x += 1
+
+NOTE! in python you don't have x++ and x-- (incrementor and decrementor) 
+
+#= Lists ===================================
+x = [1, 2, 3]
+
+#= add item to the end of the list =
+x.append(4)
+
+#= User Iput =
+x = input("x: ")
+
+#= Boolean =================================
+#False
+False
+
+#Falsy values
+0
+""
+[]
+None #null
+
+#= Comparison operator =====================
+<
+>
+<=
+>= 
+==
+!=
+
+#= IF ======================================
+if [condition]: 
+if not something:
+if something and something:
+if something or something:
+  or
+something = "this" if [condition] else "that"
+
+#= FOR =====================================
+for x in "string":               #for evry character in the string, witch is loaded into x
+  do something                   #something is going to be done
+
+for x in [a, b, c]:              # x becomes each object
+
+for x in range(y)                # x becomes each value from 0 to y-1
+
+for x in range(y, z)             # x becomes each value from y to z-1
+
+for x in range(y, z, n)          # x becomes each value from y to z-1 steping from n to n numbers
+
+for x in y:
+  if [condition]:
+    do something
+    break                        #stops iterations better for when there is a condition that should stop the for loop
+else:
+  do something else
+
+#= while ==================================
+while [condtion]:
+  does something
+  #---------------optional
+  break
+else:
+  does something else
+
+#= function ===============================
+def functionName (x,y,z):            #if i put def ... (x=1) im setting 1 as the default value
+return x #or (x, x+z, x+y+z)         #in pyhton multiple values can be returned with a function, return a tuple
+
+def functionName (x: int, y: str) -> tuple:    #im specifying the type of the inputed values and the one returned
+
+#NOTE: tuple is a type of readonly value, works like lists but its immutable,
+to define an argumento of a fucntion as a tuple just add a * before the value, like so def function(*x)
+using ** will turn it into a dictionary
+
+#= Dictionary ==============================
+#one way to add one
+def x (**y):
+  return y
+x(name="dave", age=13, sex="male")             #this will be returned as a dictionary item (object)
+
+#= Debugging w/ vscode ======================
+f9          #breakpoint
+f5          #start Debugging
+f10         #next item with the same identation
+f11         #first item of the lower identation
+shift + f11 #next fucntion
+
+#= shortcuts =================================
+home                    #start of the line
+end                     #end of the line
+ctrl + home             #top of the page
+ctrl + end              #bottom of the page
+alt + up or alt + down  # move the selected code a line up or down
+shift + alt + down      #duplicate the selected code
+ctrl + k + c            #comment code
+ctrl + k + u            #uncomment code
+
+#= Exceptions ================================
+raise Exception("Error Message")
